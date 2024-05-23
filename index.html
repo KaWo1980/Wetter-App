@@ -4,24 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wetter App</title>
-    <style src="src/styles.css"></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <div>
+    <div class="app_background">
       <header>
-        <input type="search" placeholder="Enter an City" required />
-        <input type="submit" value="search" />
+        <form>
+          <input
+            id="search_input"
+            type="search"
+            placeholder="Enter an City"
+            required
+          />
+          <input id="search_submit" type="submit" value="search" />
+        </form>
       </header>
 
       <hr />
 
       <main>
-        <div>
-          <h1>Dornbirn</h1>
-          <p>partly sunny <br />Thursday 14:46h</p>
-          <span>Humidity 52%</span><span>Wind 2.57km/h</span>
+        <div class="weather_data">
+          <div>
+            <h1 id="city">Dornbirn</h1>
+            <h2>partly sunny</h2>
+            <div class="date">Thursday 14:46h</div>
+
+            <div class="weather_conditions_container">
+              <div class="weather_conditions">
+                Humidity <br /><strong>52%</strong>
+              </div>
+              <div class="weather_conditions">
+                Wind <br /><strong>2.57km/h</strong>
+              </div>
+            </div>
+          </div>
+          <div class="weather_info_container">
+            <div class="weather_icon">
+              <img src="img/partly_sunny.png" alt="partly_sunny" />
+            </div>
+            <div class="weather_temperature">22</div>
+            <div class="temperature_unit">°C</div>
+          </div>
         </div>
-        <div>☀️ 22°C</div>
       </main>
 
       <hr />
