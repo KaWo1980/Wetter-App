@@ -100,7 +100,7 @@ a:hover {
 .weather_icon img {
   max-width: 350px;
 }
-.weather_temperature {
+#weather_temperature {
   margin-top: 10px;
   font-size: 80px;
   font-weight: 700;
