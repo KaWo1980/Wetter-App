@@ -108,18 +108,19 @@ a:hover {
   font-weight: 800;
 }
 
-.grid {
+/* Forecast */
+.forecast_grid {
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 2fr);
   grid-gap: 10px;
 }
-.grid img {
+.forecast_grid img {
   margin: 0 auto;
   width: 65%;
 }
 
-.grid p {
+.forecast_grid p {
   font-weight: 800;
   text-align: center;
 }
