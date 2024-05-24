@@ -43,7 +43,7 @@ a:hover {
   background-image: radial-gradient(
     farthest-corner at 50px 35%,
     rgb(255, 255, 255) 0%,
-    rgb(190, 190, 190) 100%
+    rgb(221, 221, 221) 100%
   );
 }
 
@@ -101,31 +101,12 @@ a:hover {
   width: 200px;
 }
 #weather_temperature {
-  margin-top: 10px;
+  margin-top: 50px;
   font-size: 80px;
   font-weight: 700;
 }
 .temperature_unit {
-  margin-top: 20px;
+  margin-top: 60px;
   font-size: 30px;
   font-weight: 800;
-}
-
-/* Forecast */
-.forecast_grid {
-  border-top: 1px solid #000000;
-  padding-top: 40px;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(6, 2fr);
-  grid-gap: 10px;
-}
-.forecast_grid img {
-  margin: 0 auto;
-  width: 65%;
-}
-
-.forecast_grid p {
-  font-weight: 800;
-  text-align: center;
 }
