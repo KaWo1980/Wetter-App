@@ -5,7 +5,10 @@ body {
   color: #000000;
   background-color: #ffffff;
 }
-
+header {
+  border-bottom: 1px solid #000000;
+  padding: 40px 0 40px 0;
+}
 h2 {
   margin: 10px 0;
   font-size: 20px;
@@ -20,6 +23,8 @@ hr {
 footer {
   margin-top: 50px;
   text-align: center;
+  border-top: 1px solid #000000;
+  padding-top: 40px;
 }
 a {
   color: #000000;
@@ -36,7 +41,7 @@ a:hover {
   border-radius: 10px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
   background-image: radial-gradient(
-    farthest-corner at 50px 50%,
+    farthest-corner at 50px 35%,
     rgb(255, 255, 255) 0%,
     rgb(190, 190, 190) 100%
   );
@@ -44,10 +49,8 @@ a:hover {
 
 #search_input {
   width: 80%;
-  font-family: "Inter";
   font-weight: 300;
   font-size: 18px;
-  color: #000000;
   padding: 15px 30px;
   background-color: #ffffff;
   border-radius: 5px;
@@ -68,7 +71,7 @@ a:hover {
 }
 #city {
   margin: 0;
-  font-size: 40px;
+  font-size: 50px;
   color: #000000;
 }
 .date {
@@ -110,6 +113,8 @@ a:hover {
 
 /* Forecast */
 .forecast_grid {
+  border-top: 1px solid #000000;
+  padding-top: 40px;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(6, 2fr);
