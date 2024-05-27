@@ -16,6 +16,8 @@ function refreshWeather(response) {
   temperatureValue.innerHTML = Math.round(temperature);
   humidity.innerHTML = `${response.data.temperature.humidity} %`;
   windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -54,8 +56,16 @@ let searchForm = document.querySelector("#search_form");
 searchForm.addEventListener("submit", handleSearchSubmit);
 
 // Forecast
-function showForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+function getForecast(city) {
+  let apiKey = "o3ce43a0d26f03dc03af17ba46t837db";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(showForecast);
+}
+
+function showForecast(response) {
+  console.log(response.data);
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
   days.forEach(function (day) {
@@ -77,4 +87,3 @@ function showForecast() {
 }
 
 searchCity("Dornbirn");
-showForecast();
