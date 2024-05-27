@@ -112,14 +112,13 @@ a:hover {
 }
 
 /*Forecast*/
-.forecast {
+.forecast_container {
   margin-top: 60px;
   display: flex;
   justify-content: space-around;
 }
 
 .forecast_date {
-  display: block;
   text-align: center;
   margin-bottom: 10px;
   font-size: 16px;
@@ -128,14 +127,12 @@ a:hover {
 }
 
 .forecast_icons {
-  display: block;
   margin: 0 auto;
   width: 80px;
 }
 .forecast_temperatures {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
   text-align: center;
   font-size: 16px;
 }

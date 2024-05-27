@@ -53,4 +53,28 @@ function handleSearchSubmit(event) {
 let searchForm = document.querySelector("#search_form");
 searchForm.addEventListener("submit", handleSearchSubmit);
 
+// Forecast
+function showForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <div class="forecast_day">
+            <div class="forecast_date">${day}</div>
+            <img class="forecast_icons" src="img/cloudy.png" alt="" />
+            <div class="forecast_temperatures">
+              <div class="forecast_temperature_max">12°</div>
+              <div class="forecast_temperature_min">9°</div>
+            </div>
+          </div>
+          `;
+  });
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastHtml;
+}
+
 searchCity("Dornbirn");
+showForecast();
