@@ -139,10 +139,11 @@ a:hover {
 
 .forecast_temperature_max {
   padding: 10px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .forecast_temperature_min {
   padding: 10px;
-  font-weight: 400;
+  font-weight: 600;
+  color: #aaaaaa;
 }
