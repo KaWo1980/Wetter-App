@@ -96,5 +96,3 @@ let searchForm = document.querySelector("#search_form");
 searchForm.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Dornbirn");
-
-console.log(showForecast);
