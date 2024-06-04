@@ -98,6 +98,7 @@ a:hover {
   display: flex;
 }
 .weather_icon_image {
+  padding-top: 50px;
   width: 200px;
 }
 #weather_temperature {
