@@ -9,7 +9,13 @@ function refreshWeather(response) {
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#weather_icon");
 
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather_icon_image" />`;
+  // replace with own icons
+  const url = response.data.condition.icon_url;
+  const fileName = url.substring(url.lastIndexOf("/") + 1); // Extrahiert den Dateinamen
+  const localPath = `img/${fileName}`; // Baut den lokalen Pfad auf
+
+  iconElement.innerHTML = `<img src="${localPath}" class="weather_icon_image" />`;
+
   city.innerHTML = response.data.city;
   dateElement.innerHTML = formatDate(date);
   weatherConditions.innerHTML = response.data.condition.description;
@@ -71,27 +77,31 @@ function showForecast(response) {
 
   response.data.daily.forEach(function (day, index) {
     if (index < 5) {
-      forecastHtml =
-        forecastHtml +
-        `
+      const iconUrl = day.condition.icon_url;
+      const iconFileName = iconUrl.substring(iconUrl.lastIndexOf("/") + 1); // Extrahiert den Dateinamen
+      const localIconPath = `img/${iconFileName}`; // Baut den lokalen Pfad auf
+
+      forecastHtml += `
       <div class="forecast_day">
-            <div class="forecast_date">${formatDay(day.time)}</div>
-            <img class="forecast_icons" src="${day.condition.icon_url}"/>
-            <div class="forecast_temperatures">
-              <div class="forecast_temperature_max">${Math.round(
-                day.temperature.maximum
-              )}°</div>
-              <div class="forecast_temperature_min">${Math.round(
-                day.temperature.minimum
-              )}°</div>
-            </div>
-          </div>
-          `;
+        <div class="forecast_date">${formatDay(day.time)}</div>
+        <img class="forecast_icons" src="${localIconPath}"/>
+        <div class="forecast_temperatures">
+          <div class="forecast_temperature_max">${Math.round(
+            day.temperature.maximum
+          )}°</div>
+          <div class="forecast_temperature_min">${Math.round(
+            day.temperature.minimum
+          )}°</div>
+        </div>
+      </div>
+      `;
     }
   });
+
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = forecastHtml;
 }
+
 let searchForm = document.querySelector("#search_form");
 searchForm.addEventListener("submit", handleSearchSubmit);
 
